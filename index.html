@@ -40,11 +40,12 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="#">Home</a></li>
-                <li><a href="viewalbums.php">View Albums</a></li>
+                <li><a href="albums.php">View Albums</a></li>
+                <li><a href="create_album.php">Create Album</a></li>
                 <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Connect <b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                    <li><a href="CreateAlbum">Create Album</a></li>
+                    <li><a href="#">Invite a Friend</a></li>
                     <li><a href="#">Send to a Friend</a></li>
                   </ul>
                 </li>
@@ -71,33 +72,23 @@
           <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:First slide" alt="First slide">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="createalbum.php">Create Your Own Today</a></p>
+              <h1>Browse Galleries</h1>
+              <p>Browse the featured galleries below to get some ideas. Maybe someday you'll have a featured album. </p>
+              <p><a class="btn btn-large btn-primary" href="create_album.php">Create Your Own Today</a></p>
             </div>
           </div>
         </div>
         <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Second slide" alt="Second slide">
+          <img src="photos/yuki_profile.jpg" width="500" height="500" alt="Featured User">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Another example headline.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Learn more</a></p>
+              <h1>Yuki loves photos</h1>
+              <p>Meet Yuki. She likes adventuring and photo taking. Look how she shares her memories with her familiy back home in New Jersey. She's also my best friend and doesn't care when I use her photos has place holders.</p>
+              <p><a class="btn btn-large btn-primary" href="albums.php">View Albums</a></p>
             </div>
           </div>
         </div>
-        <div class="item">
-          <img src="data:image/png;base64," data-src="holder.js/100%x500/auto/#777:#7a7a7a/text:Third slide" alt="Third slide">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>One more for good measure.</h1>
-              <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-              <p><a class="btn btn-large btn-primary" href="#">Browse gallery</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
@@ -110,22 +101,22 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Etiam porta sem malesuada magna mollis euismod. Nullam id dolor id nibh ultricies vehicula ut id elit. Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Praesent commodo cursus magna.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <img src="photos/ggbridge.jpg" width="140" height="140" alt="">
+          <h2>San Francisco</h2>
+          <p>Whether you're in foggy North Beach or sunny Dolores Park. I promise there's ice cream nearby</p>
+          <p><a class="btn btn-default" href="albums.php">View Album &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <img src="photos/austin_weird.gif" width="140" height="140" alt="">
+          <h2>Austin</h2>
+          <p>Live music capital of the world. Tacos. what more do I have to say? See what keeps Austin "weird".</p>
+          <p><a class="btn btn-default" href="albums.php">View Album &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="data:image/png;base64," data-src="holder.js/140x140" alt="Generic placeholder image">
-          <h2>Heading</h2>
-          <p>Donec sed odio dui. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Vestibulum id ligula porta felis euismod semper. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.</p>
-          <p><a class="btn btn-default" href="#">View details &raquo;</a></p>
+          <img src="photos/family.jpg" width="140" height="140" alt="">
+          <h2>Family Reunion</h2>
+          <p>Look at these folks. They probably had an awesome weekend. Maybe not but at least someone remembered a camera. </p>
+          <p><a class="btn btn-default" href="albums.php">View Album &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
 
@@ -137,10 +128,12 @@
       <div class="row featurette">
         <div class="col-md-7">
           <h2 class="featurette-heading">Share with Friends <span class="text-muted">It'll blow their minds.</span></h2>
-          <p class="lead">Create a photo gallery of that special beach trip and share with family or friends instantly.</p>
+          <p class="lead">Create a photo gallery of that special beach trip and share with family or friends instantly.
+            User profiles to come soon, sit tight for now. 
+          </p>
         </div>
         <div class="col-md-5">
-          <img class="featurette-image img-responsive" src="data:image/png;base64," data-src="holder.js/500x500/auto" alt="Generic placeholder image">
+          <img src="photos/lajolla.jpg" width="500" height="500">
         </div>
       </div>
 
