@@ -12,6 +12,7 @@
   $p2 = $p[1];
   $p3 = $p[2];
 
+print_r ($p);
 
 ?>
 <!DOCTYPE html>
@@ -24,7 +25,7 @@
     <link rel="shortcut icon" href="favicon.ico">
 
     <title>
-<?php echo '$_POST['title']'; 
+<?php echo $_POST['album']; 
 ?>
     </title>
 

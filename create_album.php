@@ -5,44 +5,46 @@
 
   $uploaded = false;
 
+$photos = array('photo1', 'photo2', 'photo3');
+foreach($photos as $p){
   $allowedExts = array("gif", "jpeg", "jpg", "png");
-  $temp = explode(".", $_FILES["file"]["name"]);
+  $temp = explode(".", $_FILES[$p]["name"]);
   $extension = end($temp);
 
-  //echo $_FILES['file']['name'];
-  echo $_FILES["file"]["error"];
-  //echo ($_FILES["file"]["type"]);
-  //echo ($_FILES["file"]["type"] == "image/jpg");
+  echo $_FILES[$p]['name'];
+  echo $_FILES[$p]["error"];
+  echo ($_FILES[$p]["type"]);
+  echo ($_FILES[$p]["type"] == "image/jpg");
 
-  if ((($_FILES["file"]["type"] == "image/gif")
-  || ($_FILES["file"]["type"] == "image/jpeg")
-  || ($_FILES["file"]["type"] == "image/jpg")
-  || ($_FILES["file"]["type"] == "image/pjpeg")
-  || ($_FILES["file"]["type"] == "image/x-png")
-  || ($_FILES["file"]["type"] == "image/png"))
+  if ((($_FILES[$p]["type"] == "image/gif")
+  || ($_FILES[$p]["type"] == "image/jpeg")
+  || ($_FILES[$p]["type"] == "image/jpg")
+  || ($_FILES[$p]["type"] == "image/pjpeg")
+  || ($_FILES[$p]["type"] == "image/x-png")
+  || ($_FILES[$p]["type"] == "image/png"))
   && in_array($extension, $allowedExts))
   {
-    if ($_FILES["file"]["error"] > 0)
+    if ($_FILES[$p]["error"] > 0)
       {
-      echo "Return Code: " . $_FILES["file"]["error"] . "<br>";
+      echo "Return Code: " . $_FILES[$p]["error"] . "<br>";
       }
     else
       {
-   //   echo "Upload: " . $_FILES["file"]["name"] . "<br>";
-   //   echo "Type: " . $_FILES["file"]["type"] . "<br>";
-   //   echo "Size: " . ($_FILES["file"]["size"] / 1024) . " kB<br>";
-   //   echo "Temp file: " . $_FILES["file"]["tmp_name"] . "<br>";
+   //   echo "Upload: " . $_FILES[$p]["name"] . "<br>";
+   //   echo "Type: " . $_FILES[$p]["type"] . "<br>";
+   //   echo "Size: " . ($_FILES[$p]["size"] / 1024) . " kB<br>";
+   //   echo "Temp file: " . $_FILES[$p]["tmp_name"] . "<br>";
 
-      if (file_exists("photos/" . $_FILES["file"]["name"]))
+      if (file_exists("photos/" . $_FILES[$p]["name"]))
         {
-        echo $_FILES["file"]["name"] . " already exists. ";
+        echo $_FILES[$p]["name"] . " already exists. ";
         }
       else
         {
-        move_uploaded_file($_FILES["file"]["tmp_name"],
-       "photos/" . $_FILES["file"]["name"]);
+        move_uploaded_file($_FILES[$p]["tmp_name"],
+       "photos/" . $_FILES[$p]["name"]);
         $uploaded = true;
-    //    echo "Stored in: " . "photos/" . $_FILES["file"]["name"];
+    //    echo "Stored in: " . "photos/" . $_FILES[$p]["name"];
         }
       }
   }
@@ -52,6 +54,9 @@
       echo "Invalid file";
     }
   }
+}
+
+
 
 $success = isset($_POST['AddAlbum']) && ($_POST['title'] != "") && $uploaded; 
 
@@ -149,12 +154,12 @@ $success = isset($_POST['AddAlbum']) && ($_POST['title'] != "") && $uploaded;
     				<label>Album Title: </label>
     				<input type="text" name="title" /><br/>
     				<label>Photo: </label><br/>
-                    <input type="file" name="photo1" id="file"><br/>
-                    <label>Photo: </label>
-                    <input type="file" name="photo2" id="file"><br/>
-                    <label>Photo: </label>
-                    <input type="file" name="photo3" id="file"><br/>
-    				<p>Use this password to edit your album later.</p>
+                    <input type="file" name="photo1" ><br/>
+                    <label>Photo: </label><br/>
+                    <input type="file" name="photo2"><br/>
+                    <label>Photo: </label><br/>
+                    <input type="file" name="photo3"><br/>
+    				<p>Use this password to edit your album later. Note, this system is not secure</p>
     				<label> Password:</label>
                     <input name="password" type="password" /><br/>
     				<input type="submit" name="AddAlbum" value="Create &raquo;" class="btn btn-lg btn-primary">
