@@ -133,31 +133,35 @@ $success = isset($_POST['AddAlbum']) && ($_POST['title'] != "") && $uploaded;
 	<h3>Congratulations, the album was created<h3>
 <?php
 	} else {
+    if(isset($_POST['AddAlbum'])){
 		 echo '<span style="color: red;">There were errors.<br></span>';
+    }
 	}
 ?>
 
 	<!--    -->
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron" >
+    <div class="container" style="width: 80%;" align="center">
+      <div class="jumbotron" align="left">
         <h1>Create an Album</h1>
         <form action="create_album.php" method="post" enctype="multipart/form-data">
-			<fieldset>
-				<label>Album Title: </label>
-				<input type="text" name="title" /><br/>
-				<label>Photo: </label><br/>
-                <input type="file" name="photo1" id="file"><br/>
-                <label>Photo: </label>
-                <input type="file" name="photo2" id="file"><br/>
-                <label>Photo: </label>
-                <input type="file" name="photo3" id="file"><br/>
-				<p>Use this password to edit your album later.</p>
-				<label> Password:</label>
-                <input name="password" type="password" /><br/>
-				<input type="submit" name="AddAlbum" value="Create &raquo;" class="btn btn-lg btn-primary">
-			</fieldset>
-    	</form>
+    			<fieldset>
+    				<label>Album Title: </label>
+    				<input type="text" name="title" /><br/>
+    				<label>Photo: </label><br/>
+                    <input type="file" name="photo1" id="file"><br/>
+                    <label>Photo: </label>
+                    <input type="file" name="photo2" id="file"><br/>
+                    <label>Photo: </label>
+                    <input type="file" name="photo3" id="file"><br/>
+    				<p>Use this password to edit your album later.</p>
+    				<label> Password:</label>
+                    <input name="password" type="password" /><br/>
+    				<input type="submit" name="AddAlbum" value="Create &raquo;" class="btn btn-lg btn-primary">
+    			</fieldset>
+    	 </form>
       </div>
+    </div>
 
       <!-- /END THE FEATURETTES -->
             <!-- FOOTER -->

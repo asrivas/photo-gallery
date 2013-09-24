@@ -74,7 +74,8 @@
 
 	<!--    -->
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron" >
+    <div class="container" style="width: 80%;" align="center">
+      <div class="jumbotron" align="left">
         <h1>Select an album to view.</h1>
 	    <form action="view_album.php" method="post" enctype="multipart/form-data">
 	      <fieldset>
@@ -91,6 +92,7 @@
 	      </fieldset>
 	    </form>
       </div>
+    </div>
 
       <!-- /END THE FEATURETTES -->
             <!-- FOOTER -->

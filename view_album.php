@@ -1,11 +1,18 @@
-<?php 
-	$success = isset($_POST['AddAlbum']) && ($_POST['title'] != "");
-?>
-
 <?php
-	if($success){
-		echo 'Congrats, the album was created';
-	}
+  require_once('photo_lib.php');
+  //album is title
+  $all_albums = getArray("albums");  
+  foreach($all_albums as $a){
+     if($a['title'] == $_POST['album']){
+       $p = $a['photos'];
+     }
+  }
+
+  $p1 = $p[0];
+  $p2 = $p[1];
+  $p3 = $p[2];
+
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,7 +23,10 @@
     <meta name="author" content="">
     <link rel="shortcut icon" href="bootstrap-3.0.0/assets/ico/favicon.png">
 
-    <title>Instant Photo Gallery</title>
+    <title>
+<?php echo '$_POST['title']'; 
+?>
+    </title>
 
     <!-- Bootstrap core CSS -->
     <link href="bootstrap-3.0.0/dist/css/bootstrap.css" rel="stylesheet">
@@ -30,9 +40,8 @@
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
   </head>
-<!-- NAVBAR -->
-
-
+<!-- NAVBAR
+================================================== -->
   <body>
     <div class="navbar-wrapper">
       <div class="container">
@@ -67,27 +76,48 @@
       </div>
     </div>
 
-	<!--    -->
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron" >
-        <h1>Create an Album</h1>
-        <form action="create_album.php" method="post" enctype="multipart/form-data">
-			<fieldset>
-				<label>Album Title: </label>
-				<input type="text" name="title" /><br/>
-				<label>Photo: </label><br/>
-                <input type="file" name="photo1" id="file"><br/>
-                <label>Photo: </label>
-                <input type="file" name="photo2" id="file"><br/>
-                <label>Photo: </label>
-                <input type="file" name="photo3" id="file"><br/>
-				<p>Use this password to edit your album later.</p>
-				<label> Password:</label>
-                <input name="password" type="password" /><br/>
-				<input type="submit" name="AddAlbum" value="Create &raquo;" class="btn btn-lg btn-primary">
-			</fieldset>
-    	</form>
-      </div>
+
+    <!-- Carousel
+    ================================================== -->
+    <div id="myCarousel" class="carousel slide">
+      <!-- Indicators -->
+      <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+      </ol>
+      <div class="carousel-inner">
+        <div class="item active">
+          <img src="photos/lajolla.jpg">
+          <div class="container">
+            <div class="carousel-caption">
+            </div>
+          </div>
+        </div>
+        <div class="item">
+          <img src="photos/
+<?php echo '';
+?>" width="500" height="500" alt="Featured User">
+          <div class="container">
+            <div class="carousel-caption">
+
+            </div>
+          </div>
+        </div>
+
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+    </div><!-- /.carousel -->
+
+
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+      <!-- Three columns of text below the carousel -->
+
+
+      <!-- START THE FEATURETTES -->
 
       <!-- /END THE FEATURETTES -->
             <!-- FOOTER -->
